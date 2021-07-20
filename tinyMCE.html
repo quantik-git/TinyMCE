@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TinyMCE</title>
+</head>
+
+<body>
+  <h1>JavaScript localStorage demo</h1>
+  <tinymce-editor id="editor" api-key="i3qmnzen3deihmdibgm7874acdlg1j2abel63zupgbt0lg1z" height="500" menubar="false"
+    plugins="advlist autolink lists link image charmap print preview anchor
+    searchreplace visualblocks code fullscreen
+    insertdatetime media table paste code help wordcount" toolbar="undo redo | formatselect | bold italic forecolor backcolor |
+    alignleft aligncenter alignright alignjustify |
+    bullist numlist outdent indent | link image media | removeformat | help" content_style="body
+    {
+      font-family:Helvetica,Arial,sans-serif;
+      font-size:14px
+    }">
+
+
+  </tinymce-editor>
+
+  <button onclick="mySave()">Save</button>
+  <button onclick="myLoad()">Load</button>
+
+  <script>
+    const editor = document.getElementById("editor");
+
+    function mySave() {
+      localStorage.setItem("textContent", editor.value);
+    }
+
+    function myLoad() {
+      editor.value = localStorage.getItem("textContent");
+    }
+  </script>
+  <script src="./node_modules/@tinymce/tinymce-webcomponent/dist/tinymce-webcomponent.js"></script>
+</body>
+
+</html>
